@@ -43,6 +43,8 @@
 <!------ featured catergories ------>
 <div class="catergories">
     <div class="small-container">
+
+        <h2 class="title" >Featured Categories</h2>
         <div class="row">
             <div class="col-3">
                 <img src="images/cat1.jpg">
@@ -59,13 +61,13 @@
     <!------ featured auctions ------>
 
     <div class="small-container">
-        <h2>Featured Auctions</h2>
+        <h2 class="title" >Featured Auctions</h2>
         <div class="row">
             <div class="col-4">
                 <img src="images/triumph1.jpg">
-                <h4>Red-striped Triumph Cafe Racer</h4>
-                <p>$1500.00</p>
-                <p id="timer">  </p>
+                <h4>WnR Triumph Cafe Racer</h4>
+                <p>Buy now - $1500.00</p>
+                <t id="timer">  </t>
                 <script>
                     var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
                     var x = setInterval(function() {
@@ -83,7 +85,75 @@
                     }, 1000);
                 </script>
             </div>
+            <div class="col-4">
+                <img src="images/triumph2.jpg">
+                <h4>Back Triumph Cafe Racer</h4>
+                <p>Buy now - $2000.00</p>
+                <t id="timer2">  </t>
+                <script>
+                    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+                    var x = setInterval(function() {
+                        var now = new Date().getTime();
+                        var distance = countDownDate - now;
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        document.getElementById("timer2").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("timer2").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+            </div>
+            <div class="col-4">
+                <img src="images/shoe1.jpg">
+                <h4>Red Shoes</h4>
+                <p>Buy now - $100.00</p>
+                <t id="timer3">  </t>
+                <script>
+                    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+                    var x = setInterval(function() {
+                        var now = new Date().getTime();
+                        var distance = countDownDate - now;
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        document.getElementById("timer3").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("timer3").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+            </div>
+            <div class="col-4">
+                <img src="images/shoe2.jpg">
+                <h4>White Adidas Runner</h4>
+                <p>Buy now - $300.00</p>
+                <t id="timer4">  </t>
+                <script>
+                    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+                    var x = setInterval(function() {
+                        var now = new Date().getTime();
+                        var distance = countDownDate - now;
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        document.getElementById("timer4").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("timer4").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+            </div>
         </div>
+        <h2 class="title" >Newest Auctions</h2>
+
     </div>
 
 </body>
