@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 #TopBtn {
-    visibility: visible;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -17,7 +16,6 @@
     padding: 15px;
     border-radius: 50%;
     font-size: 18px;
-    transition: 0.6s;
 }
 
 #TopBtn:hover {
@@ -25,6 +23,9 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
+}
+button{
+    cursor: pointer;
 }
 .navbar{
     position: fixed;
@@ -173,11 +174,28 @@ a{
     color: #555;
 }
 p {
+    flex: 1;
+    color: #555555;
+}
+p1{
+    flex: 2;
     color: #555555;
 }
 t {
     color: #ff523b;
 }
+.userinfo{
+    display: flex;
+}
+.edit{
+    flex: 1;
+    border: 0;
+    background: none;
+    outline: none;
+    color: blue;
+    text-decoration: underline;
+}
+
 .container{
     max-width: 1300px;
     margin: auto;
@@ -214,6 +232,23 @@ t {
     display: inline-block;
     background: #ff523b;
     color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.btn2:hover{
+    transform: scale(1.1);
+    background: #563434;
+}
+.btn2 {
+    min-width: 100px;
+    max-width: 400px;
+    display: block;
+    background: #ff523b;
+    color: white;
+    text-align: center;
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
@@ -257,6 +292,9 @@ t {
     height: auto;
     width: 100%;
 }
+.col-5{
+    min-width: 350px;
+}
 .ammount-col{
 
     display: inline-block;
@@ -283,6 +321,14 @@ t {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+.name-edit{
+    width: 90%;
+    max-width: 500px;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+    background: none;
 }
 h4{
     color: #555555;
@@ -367,7 +413,14 @@ ul{
 .copyright {
     text-align: center;
 }
-.col-5 img{
+.col-avatar{
+    flex: 1;
+}
+.col-5{
+    flex: 2;
+    padding-left: 20px;
+}
+.col-avatar img{
     min-width: 400px;
     max-width: 100%;
     padding-top: 100px;
