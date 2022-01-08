@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 #TopBtn {
-    display: none;
+    visibility: visible;
     position: fixed;
     bottom: 20px;
     right: 30px;

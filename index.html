@@ -14,26 +14,6 @@
     <button onclick="topFunction()" id="TopBtn" title="Go to top">
         <i class="material-icons">arrow_upward</i>
     </button>
-    <script>
-        Topbutton = document.getElementById("TopBtn");
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20) {
-            Topbutton.style.display = "block";
-            } else {
-                Topbutton.style.display = "none";
-            }
-        }
-        function topFunction() {
-            window.scrollTo({
-                top:0,
-                left:0,
-                behavior: "smooth"
-            })
-            document.body.scrollTop = 0;
-        }
-    </script>
     <nav class="navbar">
         <div class="content">
             <div class="logo"><a href="#"> ForBidDen</a></div>
@@ -100,6 +80,7 @@
             const menu = document.querySelector(".menu-list");
             const menuBtn = document.querySelector(".menu-btn");
             const cancelBtn = document.querySelector(".cancel-btn");
+            const Topbutton = document.getElementById("TopBtn");
             menuBtn.onclick = ()=>{
                 menu.classList.add("active")
                 menuBtn.classList.add("hide")
@@ -110,6 +91,15 @@
             }
             window.onscroll = () => {
                 this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky")
+                this.scrollY > 100 ? Topbutton.style.display = "block" :Topbutton.style.display = "none";
+            }
+            function topFunction() {
+                window.scrollTo({
+                    top:0,
+                    left:0,
+                    behavior: "smooth"
+                })
+                document.body.scrollTop = 0;
             }
         </script>
         </div>
