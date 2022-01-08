@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src = "https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <button onclick="topFunction()" id="TopBtn" title="Go to top">
@@ -33,26 +34,56 @@
             document.body.scrollTop = 0;
         }
     </script>
-
-    <div class="header">
-
-        <div class="container">
-            <navbar>
-                <div class="logo">
-                    <img src="images/Logo.jpg" width="125px" alt="">
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo"><a href="#"> ForBidDen</a></div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
                 </div>
-                <nav>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Category</a>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Auctions</a></li>
-                        <li><a href="">More</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Account</a></li>
-                        <img src="images/bid.png" width="30px" height="30px">
-                        <img src="images/menu.png" class="menu-icon">
+                        <li><a href="#">Điện tử
+                            <span class="fa fa-plus"></span>
+                        </a>
+                            <ul>
+                                <li><a href="#">Máy tính xách tay</a></li>
+                                <li><a href="#">Điện thoại di động</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Phương tiện</a>
+                            <span class="fa fa-plus"></span>
+                            <ul>
+                                <li><a href="#">Ô tô</a></li>
+                                <li><a href="#">Xe máy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Trang phục</a>
+                            <span class="fa fa-plus"></span>
+                            <ul>
+                                <li><a href="#">Giày dép</a></li>
+                                <li><a href="#">Quần áo</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </nav>
-            </navbar>
+                </li>
+                <li><a href="">Account</a>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">My Bids</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <div class="container">
             <div class="row">
                 <div class="col-2">
                     <h1>Your next deal is<br> HERE!</h1>
@@ -63,13 +94,25 @@
                     <img src="images/img1.png">
                 </div>
             </div>
-        </div>
+
         <script>
-            window.addEventListener("scroll",function (){
-                var navbar = document.querySelector("navbar");
-                navbar.classList.toggle("sticky", window.scrollY >0);
-            })
+            const navbar = document.querySelector(".navbar")
+            const menu = document.querySelector(".menu-list");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            menuBtn.onclick = ()=>{
+                menu.classList.add("active")
+                menuBtn.classList.add("hide")
+            }
+            cancelBtn.onclick = ()=>{
+                menu.classList.remove("active")
+                menuBtn.classList.remove("hide")
+            }
+            window.onscroll = () => {
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky")
+            }
         </script>
+        </div>
     </div>
 <!------ featured catergories ------>
 <div class="catergories">
@@ -95,7 +138,7 @@
     <!------ featured auctions ------>
 
     <div class="small-container">
-        <h2 class="title" >Featured Auctions</h2>
+        <h2 class="title" >Near-ending Auctions</h2>
         <div class="row">
             <div class="col-4">
                 <img src="images/triumph1.jpg">
@@ -117,22 +160,6 @@
                     </div>
                 </div>
                 <t id="timer">  </t>
-                <script>
-                    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
-                    var x = setInterval(function() {
-                        var now = new Date().getTime();
-                        var distance = countDownDate - now;
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        document.getElementById("timer").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
-                        if (distance < 0) {
-                            clearInterval(x);
-                            document.getElementById("timer").innerHTML = "EXPIRED";
-                        }
-                    }, 1000);
-                </script>
             </div>
             <div class="col-4">
                 <img src="images/triumph2.jpg">
@@ -154,22 +181,6 @@
                     </div>
                 </div>
                 <t id="timer2">  </t>
-                <script>
-                    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
-                    var x = setInterval(function() {
-                        var now = new Date().getTime();
-                        var distance = countDownDate - now;
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        document.getElementById("timer2").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
-                        if (distance < 0) {
-                            clearInterval(x);
-                            document.getElementById("timer2").innerHTML = "EXPIRED";
-                        }
-                    }, 1000);
-                </script>
             </div>
             <div class="col-4">
                 <img src="images/shoe1.jpg">
@@ -191,22 +202,6 @@
                     </div>
                 </div>
                 <t id="timer3">  </t>
-                <script>
-                    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
-                    var x = setInterval(function() {
-                        var now = new Date().getTime();
-                        var distance = countDownDate - now;
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        document.getElementById("timer3").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
-                        if (distance < 0) {
-                            clearInterval(x);
-                            document.getElementById("timer3").innerHTML = "EXPIRED";
-                        }
-                    }, 1000);
-                </script>
             </div>
             <div class="col-4">
                 <img src="images/shoe2.jpg">
@@ -228,22 +223,28 @@
                     </div>
                 </div>
                 <t id="timer4">  </t>
-                <script>
-                    var countDownDate3 = new Date("Dec 14, 2021 14:43:25").getTime();
-                    var x = setInterval(function() {
-                        var now = new Date().getTime();
-                        var distance = countDownDate3 - now;
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        document.getElementById("timer4").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
-                        if (distance < 0) {
-                            clearInterval(x);
-                            document.getElementById("timer4").innerHTML = "EXPIRED";
-                        }
-                    }, 1000);
-                </script>
+            </div>
+
+            <div class="col-4">
+                <img src="images/triumph1.jpg">
+                <h4>WnR Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $1500.00</p>
+                    </div>
+                </div>
+                <t id="timer">  </t>
             </div>
         </div>
     </div>
@@ -263,10 +264,236 @@
             </div>
         </div>
     </div>
+
+    <!------ hot auctions ------>
+
     <div class="small-container">
-        <h2 class="title" >Newest Auctions</h2>
+        <h2 class="title" >Hottest Auctions</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/triumph1.jpg">
+                <h4>WnR Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $1500.00</p>
+                    </div>
+                </div>
+                <t id="timer">  </t>
+            </div>
+            <div class="col-4">
+                <img src="images/triumph2.jpg">
+                <h4>Back Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $2000.00</p>
+                    </div>
+                </div>
+                <t id="timer2">  </t>
+            </div>
+            <div class="col-4">
+                <img src="images/shoe1.jpg">
+                <h4>Red Shoes</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $100.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $200.00</p>
+                    </div>
+                </div>
+                <t id="timer3">  </t>
+            </div>
+            <div class="col-4">
+                <img src="images/shoe2.jpg">
+                <h4>White Adidas Runner</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $250.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $300.00</p>
+                    </div>
+                </div>
+                <t id="timer4">  </t>
+            </div>
+
+            <div class="col-4">
+                <img src="images/triumph1.jpg">
+                <h4>WnR Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $1500.00</p>
+                    </div>
+                </div>
+                <t id="timer">  </t>
+            </div>
+        </div>
     </div>
-<!------footer--------->
+    <!------ most expensive auctions ------>
+
+    <div class="small-container">
+        <h2 class="title" >Most Expensive Auctions</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/triumph1.jpg">
+                <h4>WnR Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $1500.00</p>
+                    </div>
+                </div>
+                <t id="timer">  </t>
+            </div>
+            <div class="col-4">
+                <img src="images/triumph2.jpg">
+                <h4>Back Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $2000.00</p>
+                    </div>
+                </div>
+                <t id="timer2">  </t>
+            </div>
+            <div class="col-4">
+                <img src="images/shoe1.jpg">
+                <h4>Red Shoes</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $100.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $200.00</p>
+                    </div>
+                </div>
+                <t id="timer3">  </t>
+            </div>
+            <div class="col-4">
+                <img src="images/shoe2.jpg">
+                <h4>White Adidas Runner</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $250.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $300.00</p>
+                    </div>
+                </div>
+                <t id="timer4">  </t>
+            </div>
+
+            <div class="col-4">
+                <img src="images/triumph1.jpg">
+                <h4>WnR Triumph Cafe Racer</h4>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/bidicon.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Current bid - $1300.00</p>
+                    </div>
+                </div>
+                <div class="ammount-box">
+                    <div class="ammount-col">
+                        <img src="images/moneybag.png">
+                    </div>
+                    <div class="ammount-col">
+                        <p>Buy now - $1500.00</p>
+                    </div>
+                </div>
+                <t id="timer">  </t>
+            </div>
+        </div>
+    </div>
+
+
+    <!------footer--------->
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -279,7 +506,7 @@
                 </div>
             </div>
             <div class="footer-col-2">
-                <img src="images/logo-white.png">
+                <img src="images/Logo.jpg">
                 <p>ForBidDen - For True Bidders!</p>
             </div>
             <div class="footer-col-3">
@@ -305,5 +532,17 @@
         <p class="copyright">Copyrights 2021 - HCMUS</p>
     </div>
 </div>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight="0px";
+        function menutoggle(){
+            if (MenuItems.style.maxHeight === "0px"){
+                MenuItems.style.maxHeight = "200px";
+            }
+            else{
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
 </body>
 </html>
