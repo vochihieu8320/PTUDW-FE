@@ -194,10 +194,6 @@ p {
     flex: 1;
     color: #555555;
 }
-p1{
-    flex: 2;
-    color: #555555;
-}
 t {
     color: #ff523b;
 }
@@ -255,22 +251,6 @@ t {
     transition: 0.5s;
 }
 
-.btn2:hover{
-    transform: scale(1.1);
-    background: #563434;
-}
-.btn2 {
-    min-width: 100px;
-    max-width: 400px;
-    display: block;
-    background: #ff523b;
-    color: white;
-    text-align: center;
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-    transition: 0.5s;
-}
 .header{
     max-width: 100%;
     background: linear-gradient(#ffd6d6,white);
@@ -380,6 +360,7 @@ h4{
 }
 /*footer*/
 .footer{
+    margin-top: 50px;
     background: #d09b9b;
     color: black;
     font-size: 14px;
@@ -439,6 +420,47 @@ ul{
     max-width: 100%;
     padding-top: 100px;
 }
+p1{
+    margin-top: 5px;
+    line-height: 30px;
+    flex: 2;
+    color: #555555;
+}
+/*products*/
+
+.btn2:hover{
+    transform: scale(1.1);
+    background: #563434;
+}
+.btn2 {
+    min-width: 100px;
+    max-width: 400px;
+    display: block;
+    background: #ff523b;
+    color: white;
+    text-align: center;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.btn3:hover{
+    transform: scale(1.1);
+    background: #563434;
+}
+.btn3 {
+    min-width: 100px;
+    max-width: 400px;
+    width: 80%;
+    display: block;
+    background: #ff523b;
+    color: white;
+    text-align: center;
+    padding: 8px 30px;
+    margin: 10px 0;
+    border-radius: 30px;
+    transition: 0.5s;
+}
 .col-5{
     flex: 2;
     padding-left: 20px;
@@ -448,8 +470,6 @@ ul{
     line-height: 60px;
     margin: 25px 0;
 }
-/*products*/
-
 .col-product {
     margin-top: 80px;
     flex-basis: 50%;
@@ -477,6 +497,31 @@ ul{
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.col-5 .input-box{
+    max-width: 500px;
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 25px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+}
+.col-5 .desc-box{
+    max-width: 500px;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+    resize: none;
 }
 /*page next*/
 .page-btn{
