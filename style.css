@@ -40,8 +40,8 @@ button{
     padding: 10px 0;
 }
 .navbar .content{
-    padding-left: 100px;
-    padding-right: 300px;
+    padding-left: 20px;
+    padding-right: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,7 +50,7 @@ button{
     display: inline-flex;
 }
 .navbar .logo a{
-    z-index: 98;
+    z-index: 99;
     font-size: 50px;
     font-weight: 600;
     color: black;
@@ -223,8 +223,8 @@ t {
     padding-top: 70px;
 }
 .row {
-    display: flex;
     align-items: center;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -491,4 +491,59 @@ ul{
     text-align: center;
     line-height: 40px;
     cursor: pointer;
+}
+/*searchbox*/
+.box{
+    right: -100px;
+    max-width: 300px;
+    width: 100%;
+}
+.box .search-box{
+    position: relative;
+    height: 50px;
+    max-width: 50px;
+    margin: auto;
+    border-radius: 25px;
+    box-shadow: none;
+    transition: all 0.6s;
+}
+#check:checked ~ .search-box{
+    max-width: 300px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 18px;
+    transition: visibility 0.6s;
+    visibility: hidden;
+}
+#check:checked ~ .search-box input{
+    visibility: visible;
+}
+.search-box .s-icon{
+    position: absolute;
+    background: #ffd6d6;
+    right: -2px;
+    top: 0;
+    width: 60px;
+    z-index: 98;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#check:checked ~ .search-box .s-icon{
+    background: #ff523b;
+    border-radius: 0 25px 25px 0;
+}
+#check {
+    display: none;
 }
