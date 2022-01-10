@@ -1,0 +1,215 @@
+/* Đặt biến */
+:root{
+    --primary-color: #ff523b;
+    --second-primary-color: #dd8f91;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    
+    --header-height: 52px;
+}
+
+/* Áp dụng thuộc tính css lên tất cả các phần tử html được nhúng file base.css này */
+*{
+    /* Có thêm padding hay border thì cái kích thước nó vẫn k đổi */
+    box-sizing: inherit;
+}
+
+
+html{
+    /* Hai dòng dưới lấy size là 12 (HACK) */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /* San-serif: chủng chữ k có chân */
+    font-family: 'Roboto', sans-serif;
+    /* Thẻ to nhất nên các thẻ sau sẽ kế thừa    */
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* Hiện ra cái form login */
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* 8 số 12 ở dưới là khoảng cách giữa các cột do shopee mật độ sản phẩm dày nên
+để là 5, chuẩn bth là 12 */
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+/* Cột là 12, dưới đây là các tỉ lệ của nó */
+
+.grid__column-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    /* 2/12*100 */
+    width: 16.6667%;
+}
+
+.grid__column-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 25%;
+}
+
+.grid__column-4 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 33.3334%;
+}
+
+
+.grid__column-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 50%;
+}
+
+.grid__column-6-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.grid__column-6-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 50%;
+}
+
+
+.grid__column-8 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 66.6667%;
+}
+
+.grid__column-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 83.3334%;
+}
+
+.grid__column-10-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 20%;
+}
+
+/* Này là chỉ có 5 cột */
+.grid__column-5 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__3-column {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 30%;
+}
+
+
+/* Button style */
+.btn{
+    min-width: 124px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    /* padding: 0 12px; */
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: #efefef;
+    line-height: 1.6rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn.btn--normal:hover{   
+    background-color: rgba(0,0,0,0.1);
+}
+/* Cách viết dấu chấm liền nhau như vậy có nghĩa là một
+element có hai class như dưới, 3 4 làm tương tư */
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+
+
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* display: flex; */
+    animation: fadeIn linear 0.1s;
+    /* Tại thằng header nó z-index bằng 1 */
+    z-index: 2;
+    /* display: none; */
+}
+
+
+
+.modal.open {
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    /* Nằm trên lớp layout */
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+.modal__inner {
+    animation: modalFadeIn ease 0.5s;
+}
