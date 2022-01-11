@@ -126,6 +126,14 @@ nav ul ul ul li {
     display: inline-block;
     max-width: 40px;
 }
+.icon-watch{
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+.icon-watch.watch-canbtn{
+
+}
 
 @media only screen and (max-width : 800px) {
     .icon {
@@ -429,6 +437,7 @@ p1{
 /*watchlist*/
 .row-small{
     flex: 1;
+    align-items: center;
     width: 100%;
 }
 .img-watchlist{
@@ -437,25 +446,30 @@ p1{
     margin:  10px;
 }
 .pageinfo .img-watchlist{
-    flex: 1;
+    flex: 2;
 }
 .col-watchbig{
-    flex: 2;
+    flex: 3;
     margin: 20px 0 20px 20px;
 }
-
+.col-icon{
+    flex: 1;
+    transition: all 0.6s;
+}
+.col-icon:hover{
+    transform: scale(1.1);
+}
 .row-watch {
-    width: 80%;
-    margin-left: 50px;
+    width: 100%;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    transition: 0.6s;
+    transition: all 0.6s;
 }
 .row-watch:hover{
-    transform: scale(1.1);
     cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
 }
 /*products*/
 
