@@ -14,6 +14,15 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="content">
                 <div className="logo"><Link to="/user"> ForBidDen</Link></div>
+                <div class="box">
+                <input type="checkbox" id="check" />
+                    <div class="search-box">
+                        <input id="s-box" type="text" placeholder="Search for a bid"/>
+                        <label for="check" class="s-icon">
+                            <i class="fas fa-search"></i>
+                        </label>
+                    </div>
+                </div>
                 <ul className="menu-list">
                     <div className="icon cancel-btn">
                         <i className="fas fa-times"></i>

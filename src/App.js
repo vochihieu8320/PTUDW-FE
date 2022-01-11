@@ -4,7 +4,7 @@ import Registration from './components/Registration';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import UserForgotPW from './views/User_ForgotPW';
 import UserProfile from './views/User_Profile';
@@ -25,6 +25,9 @@ class App extends React.Component {
                     <Homepage />
                     <Footer/>
                 </Route>
+                <Route exact path = "/" >
+                    <Redirect to="/user"/>
+                </Route>
                 <Route exact path = "/user/register">
                     <Registration />
                 </Route>
@@ -42,7 +45,7 @@ class App extends React.Component {
                     <UserProfile />
                     <Footer/>
                 </Route>
-                <Route exact path = "/user/products/:productID">
+                <Route exact path = "/user/products/detail">
                     <Navbar/>
                     <UserProductDetails />
                     <Footer/>

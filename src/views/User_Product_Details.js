@@ -1,73 +1,115 @@
-import React, {useState} from 'react';
+import React, {Fragment,useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import "../assets/css/homepage.css";
-
+import axios from 'axios';
 
 const UserProductDetails = () => {
-    
+    const [Product, setProduct] = useState([{"product":{}}]);
+    const local = localStorage.getItem("currentUser");
+    const token = JSON.parse(local)["token"];
+    let imgArr = ""
+    let img1 = ""
+    let img2 = ""
+
+    useEffect(() => {
+        const fetchProduct = async () =>{
+            try {
+                  await axios.get(`https://wnc-be-18.herokuapp.com/products/${localStorage.getItem("productID")}`,{
+                  headers: {"Authorization" : `Bearer ${token}`}
+                }) 
+                  .then(res => {
+                      setProduct(res.data)
+                  })
+                  .catch(err => console.log(err));
+            } catch (error) {
+                console.log('Failed to fetch store list', error)
+            }
+          } 
+        fetchProduct();
+    }, [])
+
+    {Array(Product).map(product=>{
+        imgArr = product.imgArr
+    })}
+
+    img1 = JSON.stringify(imgArr)
+    console.log(typeof(img1))
 
     return(
         <div>
             <div className="container">
                 <div className="row">
-                    <div className="col-product">
-                        <img src="images/Honda/GPX_1.jpg" width="100%" id="product-img"/>
-                        <div className="small-img-row">
-                            <div className="small-img-col">
-                                <img src="images/Honda/GPX_1.jpg" width="100%" className="small-img"/>
+                    {Array(Product).map(product=>{
+                        return(
+                        <>
+                            <div className="col-product">
+                            <img src={product.img} width="100%" id="product-img"/>
+                                {/* {Array(imgArr).map(img=>{
+                                    return(
+                                        <>
+                                            <div className="small-img-row">
+                                                <div className="small-img-col">
+                                                    <img src={product.img} width="100%" className="small-img"/>
+                                                </div>
+                                                <div className="small-img-col">
+                                                    <img src={img.img1} width="100%" className="small-img"/>
+                                                </div>
+                                                <div className="small-img-col">
+                                                    <img src={img.img2} width="100%" className="small-img"/>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                                })} */}
                             </div>
-                            <div className="small-img-col">
-                                <img src="images/Honda/GPX_2.jpg" width="100%" className="small-img"/>
+                            <div className="col-5">
+                                <div className="pageinfo">
+                                    <h1 id="product-name">{product.name}</h1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Current Price: </p>
+                                    <p1 id="product-curr">$2500</p1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Price Step:</p>
+                                    <p1 id="product-step">$50</p1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Buy now:</p>
+                                    <p1 id="product-price">$5000</p1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Seller:</p>
+                                    <p1>
+                                        <p1 id="seller-name">nvanafbd</p1>
+                                        <p1 id="seller-rating">(10/10)</p1>
+                                    </p1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Last Bidder: </p>
+                                    <p1>
+                                        <p1 id="bidder-name">abcLong</p1>
+                                        <p1 id="bidder-rating">(10/10)</p1>
+                                        <p1><Fragment>&nbsp;</Fragment>at:
+                                                <t id="timer5">10/1/2022</t>
+                                        </p1>
+                                    </p1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Time left:</p>
+                                    <p1>
+                                        <t id="timer 6">12/1/2022</t>
+                                    </p1>
+                                </div>
+                                <div className="pageinfo">
+                                    <p>Description:</p>
+                                    <p1 id="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa dolorem doloremque eligendi expedita hic illo itaque molestias natus odit officiis pariatur quia sunt, tempora, ullam ut voluptas voluptatum.</p1>
+                                </div>
                             </div>
-                            <div className="small-img-col">
-                                <img src="images/Honda/GPX_3.jpg" width="100%" className="small-img"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-5">
-                        <div className="pageinfo">
-                            <h1 id="product-name">Xe Honda GPX</h1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Current Price: </p>
-                            <p1 id="product-curr">$2500</p1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Price Step:</p>
-                            <p1 id="product-step">$50</p1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Buy now:</p>
-                            <p1 id="product-price">$5000</p1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Seller:</p>
-                            <p1>
-                                <p1 id="seller-name">nvanafbd</p1>
-                                <p1 id="seller-rating">(10/10)</p1>
-                            </p1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Last Bidder: </p>
-                            <p1>
-                                <p1 id="bidder-name">abcLong</p1>
-                                <p1 id="bidder-rating">(10/10)</p1>
-                                <p1>at:
-                                        <t id="timer5">10/1/2022</t>
-                                </p1>
-                            </p1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Time left:</p>
-                            <p1>
-                                <t id="timer 6">12/1/2022</t>
-                            </p1>
-                        </div>
-                        <div className="pageinfo">
-                            <p>Description:</p>
-                            <p1 id="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa dolorem doloremque eligendi expedita hic illo itaque molestias natus odit officiis pariatur quia sunt, tempora, ullam ut voluptas voluptatum.</p1>
-                        </div>
-                    </div>
+                        </>
+                        )
+                    })}
+                    
                 </div>
             </div>
             {/* <!------ auctions ------> */}
