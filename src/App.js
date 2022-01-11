@@ -12,6 +12,7 @@ import UserProductDetails from './views/User_Product_Details';
 import UserForgotPWChange from './views/User_ForgotPW_change';
 import UserChangePwd from './views/User_ChangePwd';
 import UserProductCategory from './views/User_Category';
+import UserProductBid from './views/Bid_Product';
 
 // Chữ cái đầu phải viết hoa mới được
 class App extends React.Component {
@@ -56,6 +57,11 @@ class App extends React.Component {
                 </Route>
                 <Route exact path = "/user/changepwd">
                     <UserChangePwd/>
+                </Route>
+                <Route exact path = "/user/productbid">
+                    <Navbar/>
+                    <UserProductBid />
+                    <Footer/>
                 </Route>
             </Switch>
           </Router>

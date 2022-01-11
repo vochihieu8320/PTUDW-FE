@@ -41,7 +41,7 @@ button{
 }
 .navbar .content{
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -522,6 +522,13 @@ p1{
     font-size: 18px;
     box-shadow: 0 3px 5px rgba(0,0,0,0.25);
     resize: none;
+}
+.bid-his {
+    overflow-y: scroll;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
 }
 /*page next*/
 .page-btn{
