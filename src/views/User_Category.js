@@ -5,11 +5,13 @@ import axios from 'axios';
 import moneybag from "../assets/res/moneybag.png"
 import bidicon from "../assets/res/bidicon.png"
 
+
+
 const UserProductCategory = () => {
     const [ProductList, setProductList] = useState([{"product":{}}]);
     const local = localStorage.getItem("currentUser");
     const token = JSON.parse(local)["token"];
-
+    const [currentPage, setCurrentPage] = useState(0);
     useEffect(() => {
         const fetchList = async (skip,limit) =>{
             try {
@@ -28,20 +30,35 @@ const UserProductCategory = () => {
         fetchList(0,5);
     }, [])
 
-    const fetchProductList = async (skip,limit) =>{
+
+    function Page(value){
+        if(value===-1){
+            setCurrentPage(currentPage - 1 < 0 ? 0:currentPage - 1)
+        }
+        else if(value===4) setCurrentPage(currentPage + 1 > 4 ? 4:currentPage + 1)
+        else setCurrentPage(value)
+    }
+
+    const fetchProductList = async (limit) =>{
         try {
-              await axios.get(`https://wnc-be-18.herokuapp.com/products/?skip=${skip}&limit=${limit}`,{
+              await axios.get(`https://wnc-be-18.herokuapp.com/products/?skip=${currentPage*5}&limit=${limit}`,{
               headers: {"Authorization" : `Bearer ${token}`}
             }) 
               .then(res => {
-                  
+                  setProductList(res.data)
+                  console.log(res.data)
               })
               .catch(err => console.log(err));
         } catch (error) {
             console.log('Failed to fetch store list', error)
         }
       } 
-    
+
+    const fetchList = (limit,value) =>{
+        Page(value)
+        fetchProductList(limit)
+    }
+
     return(
         <div>
             {/* <!--body--> */}
@@ -96,6 +113,15 @@ const UserProductCategory = () => {
                         </div>
                     )
                 })} 
+                <nav aria-label="Page navigation example">
+                <ul className="pagination">
+                    <li onClick={(e)=>fetchList(5,-1)} className="page-item"><Link className="page-link" to="#">Previous</Link></li>
+                    <li onClick={(e)=>fetchList(5,0)} className="page-item"><Link className="page-link" to="#">0</Link></li>
+                    <li onClick={(e)=>fetchList(5,1)} className="page-item"><Link className="page-link" to="#">1</Link></li>
+                    <li onClick={(e)=>fetchList(5,2)} className="page-item"><Link className="page-link" to="#">2</Link></li>
+                    <li onClick={(e)=>fetchList(5,4)} className="page-item"><Link className="page-link" to="#">Next</Link></li>
+                </ul>
+                </nav>
                 </div>
             </div>
         </div>
