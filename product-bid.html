@@ -155,42 +155,78 @@
                     <t id="timer 6">12/1/2022</t>
                 </p1>
             </div>
-            <div class="pageinfo">
-                <p>Your price: </p>
-                <p1><input class="input-box" type="text" id="bid-price" placeholder="Type here.."></p1>
-            </div>
-            <div class="pageinfo">
-                <p>For auto bidding:</p>
-                <p1></p1>
-            </div>
-            <div class="pageinfo">
-                <p>Your max price: </p>
-                <p1><input class="input-box" type="text" id="bid-max-price" placeholder="Type here.."></p1>
-            </div>
-            <div class="pageinfo">
-                <p>Auto-bid Price step: </p>
-                <p1><input class="input-box" type="text" id="bid-step" placeholder="Type here.."></p1>
-            </div>
         </div>
     </div>
-
-
-    <div class="small-container">
-        <div class="row">
-            <div class="col-6">
-                <a id="bid-summit" href=""class="btn2">Summit Bid</a>
-            </div>
-            <div class="col-6">
-                <a id="bid-auto"   href=""class="btn2">Autobid</a>
-            </div>
-        </div>
+    <div class="row">
+        <table class="t-bid">
+            <thead>
+            <tr>
+                <th class="t-bid-head" colspan="2">For manual bidding:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="t-bid-cell">Your price</td>
+                <td class="t-bid-cell"><input class="input-box" type="text" id="bid-price" placeholder="Type here.."></td>
+            </tr>
+            <tr>
+                <td class="t-bid-cell"></td>
+                <td class="t-bid-cell"></td>
+            </tr>
+            <tr>
+                <td class="t-bid-cell" colspan="2"><a id="bid-summit" href=""class="btn2">Summit Bid</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="t-bid">
+            <thead>
+            <tr>
+                <th class="t-bid-head" colspan="2">For Automatic bidding:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="t-bid-cell">Your max price:</td>
+                <td class="t-bid-cell"><input class="input-box" type="text" id="bid-max-price" placeholder="Type here.."></td>
+            </tr>
+            <tr>
+                <td class="t-bid-cell">Auto-bid price step</td>
+                <td class="t-bid-cell"><input class="input-box" type="text" id="bid-step" placeholder="Type here.."></td>
+            </tr>
+            <tr>
+                <td class="t-bid-cell" colspan="2"><a id="bid-auto"   href=""class="btn2">Autobid</a></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-
     <div class="small-container">
         <div class="pageinfo">
             <p>Bid History: </p>
         </div>
-        <textarea readonly class="bid-his" name="bid-history" id="bid-history" cols="30" rows="10"></textarea>
+
+        <div id="table-wrapper">
+            <div id="table-scroll">
+                <table>
+                    <thead>
+                    <tr>
+                        <th><span class="text">Time</span></th>
+                        <th><span class="text">Bidder</span></th>
+                        <th><span class="text">Price</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr> <td id="his-time-1">1/11/2022 10:43</td> <td id="his-user-1">abcxyz</td> <td id="his-price-1">$1500</td> </tr>
+                        <tr> <td id="his-time-2">1/11/2022 10:43</td> <td id="his-user-2">abcxyz</td> <td id="his-price-2">$1500</td> </tr>
+                        <tr> <td id="his-time-3">1/11/2022 10:43</td> <td id="his-user-3">abcxyz</td> <td id="his-price-3">$1500</td> </tr>
+                        <tr> <td id="his-time-4">1/11/2022 10:43</td> <td id="his-user-4">abcxyz</td> <td id="his-price-4">$1500</td> </tr>
+                        <tr> <td id="his-time-5">1/11/2022 10:43</td> <td id="his-user-5">abcxyz</td> <td id="his-price-5">$1500</td> </tr>
+                        <tr> <td id="his-time-6">1/11/2022 10:43</td> <td id="his-user-6">abcxyz</td> <td id="his-price-6">$1500</td> </tr>
+                        <tr> <td id="his-time-7">1/11/2022 10:43</td> <td id="his-user-7">abcxyz</td> <td id="his-price-7">$1500</td> </tr>
+                        <tr> <td id="his-time-8">1/11/2022 10:43</td> <td id="his-user-8">abcxyz</td> <td id="his-price-8">$1500</td> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 <!------footer--------->

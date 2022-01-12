@@ -347,13 +347,6 @@ h4{
 .col-4:hover{
     transform: scale(1.1);
 }
-.col-6{
-    transition: 0.6s;
-}
-.col-6:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-}
 .offer{
     background: radial-gradient(white,#ffd6d6);
     margin-top: 80px;
@@ -487,7 +480,7 @@ p1{
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
-    transition: 0.5s;
+    transition: all 0.6s;
 }
 .btn3:hover{
     transform: scale(1.1);
@@ -568,13 +561,20 @@ p1{
     box-shadow: 0 3px 5px rgba(0,0,0,0.25);
     resize: none;
 }
-.bid-his {
-    overflow-y: scroll;
+.t-bid{
+    flex: 1;
     width: 100%;
-    max-width: 1000px;
-    height: 500px;
-    resize: none; /* Remove this if you want the user to resize the textarea */
+    margin: 10px;
 }
+.t-bid-cell{
+    margin: 10px;
+}
+.col-6{
+    flex: 1;
+}
+.col-6:hover{
+}
+
 /*page next*/
 .page-btn{
     margin: 0 auto 80px;
@@ -643,4 +643,30 @@ p1{
 }
 #check {
     display: none;
+}
+/*bid-his*/
+#table-wrapper {
+
+    position:relative;
+}
+#table-scroll {
+    border: 1px solid black;
+    height:150px;
+    overflow:auto;
+    margin-top:25px;
+}
+#table-wrapper table {
+    width:100%;
+}
+#table-wrapper table * {
+    color:black;
+}
+#table-wrapper table thead th .text {
+    transform: translateX(-50%);
+    position:absolute;
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    text-align: left;
 }
