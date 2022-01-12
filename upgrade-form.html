@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ForBidDen | For bidders, Real bidding</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src = "https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<button onclick="topFunction()" id="TopBtn" title="Go to top">
+    <i class="material-icons">arrow_upward</i>
+</button>
+<nav class="navbar">
+    <div class="content">
+        <div class="logo"><a href="#"> ForBidDen</a></div>
+
+        <div class="box">
+            <input type="checkbox" id="check" >
+            <div class="search-box">
+                <input id="s-box" type="text" placeholder="Search for a bid">
+                <label for="check" class="s-icon">
+                    <i class="fas fa-search"></i>
+                </label>
+
+            </div>
+        </div>
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <li><a href="">Home</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Category</a>
+                <ul>
+                    <li><a href="#">Điện tử
+                        <span class="fa fa-plus"></span>
+                    </a>
+                        <ul>
+                            <li><a href="#">Máy tính xách tay</a></li>
+                            <li><a href="#">Điện thoại di động</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Phương tiện</a>
+                        <span class="fa fa-plus"></span>
+                        <ul>
+                            <li><a href="#">Ô tô</a></li>
+                            <li><a href="#">Xe máy</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Trang phục</a>
+                        <span class="fa fa-plus"></span>
+                        <ul>
+                            <li><a href="#">Giày dép</a></li>
+                            <li><a href="#">Quần áo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">Account</a>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">My Bids</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+</nav>
+
+<script>
+    const navbar = document.querySelector(".navbar")
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    const Topbutton = document.getElementById("TopBtn");
+    menuBtn.onclick = ()=>{
+        menu.classList.add("active")
+        menuBtn.classList.add("hide")
+    }
+    cancelBtn.onclick = ()=>{
+        menu.classList.remove("active")
+        menuBtn.classList.remove("hide")
+    }
+    window.onscroll = () => {
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky")
+        this.scrollY > 100 ? Topbutton.style.display = "block" :Topbutton.style.display = "none";
+    }
+    function topFunction() {
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior: "smooth"
+        })
+        document.body.scrollTop = 0;
+    }
+</script>
+<!--header-->
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <h2 class="title">Upgrade to seller</h2>
+        </div>
+    </div>
+</div>
+<!--body-->
+<!------ my form ------>
+
+<div class="small-container">
+    <div class="col-5">
+        <textarea class="desc-box" id="" cols="30" rows="10"></textarea>
+    </div>
+</div>
+
+<!------footer--------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download app</h3>
+                <p>Donwload our app for Android and Ios</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/Logo.jpg">
+                <p>ForBidDen - For True Bidders!</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>External Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Bidding Policy</li>
+                    <li>Join Us</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyrights 2021 - HCMUS</p>
+    </div>
+</div>
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight="0px";
+    function menutoggle(){
+        if (MenuItems.style.maxHeight === "0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+</script>
+
+</body>
+</html>
