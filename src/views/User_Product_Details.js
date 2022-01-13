@@ -2,14 +2,15 @@ import React, {Fragment,useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import "../assets/css/homepage.css";
 import axios from 'axios';
+import { func } from 'prop-types';
+import moneybag from "../assets/res/moneybag.png"
+import bidicon from "../assets/res/bidicon.png"
+
 
 const UserProductDetails = () => {
     const [Product, setProduct] = useState([{"product":{}}]);
     const local = localStorage.getItem("currentUser");
     const token = JSON.parse(local)["token"];
-    let imgArr = ""
-    let img1 = ""
-    let img2 = ""
 
     useEffect(() => {
         const fetchProduct = async () =>{
@@ -27,34 +28,29 @@ const UserProductDetails = () => {
           } 
         fetchProduct();
     }, [])
-
     
     return(
         <div>
+            <div class="header">
             <div className="container">
-                <div className="row">
+                <div className="row-product">
                     {Array(Product).map(product=>{
                         return(
                         <>
                             <div className="col-product">
                             <img src={product.img} width="100%" id="product-img"/>
-                            {Array(imgArr).map(img=>{
-                                return(
-                                    <>
-                                        <div className="small-img-row">
-                                            <div className="small-img-col">
-                                                <img src={product.img} width="100%" className="small-img"/>
-                                            </div>
-                                            <div className="small-img-col">
-                                                <img src={img.img1} width="100%" className="small-img"/>
-                                            </div>
-                                            <div className="small-img-col">
-                                                <img src={img.img2} width="100%" className="small-img"/>
-                                            </div>
-                                        </div>
-                                    </>
-                                )
-                            })}
+                            <div className="small-img-row">
+                                <div className="small-img-col">
+                                    <img src={product.img} width="100%" className="small-img"/>
+                                </div>
+                                <div className="small-img-col">
+                                    <img src={product.img1} width="100%" className="small-img"/>
+                                </div>
+                                <div className="small-img-col">
+                                    <img src={product.img2} width="100%" className="small-img"/>
+                                </div>
+                            </div>
+                                    
                             </div>
                             <div className="col-5">
                                 <div className="pageinfo">
@@ -62,29 +58,29 @@ const UserProductDetails = () => {
                                 </div>
                                 <div className="pageinfo">
                                     <p>Current Price: </p>
-                                    <p1 id="product-curr">$2500</p1>
+                                    <p1 id="product-curr">${product.current_price}</p1>
                                 </div>
                                 <div className="pageinfo">
                                     <p>Price Step:</p>
-                                    <p1 id="product-step">$50</p1>
+                                    <p1 id="product-step">${product.price_step}</p1>
                                 </div>
                                 <div className="pageinfo">
                                     <p>Buy now:</p>
-                                    <p1 id="product-price">$5000</p1>
+                                    <p1 id="product-price">${product.buynow_price}</p1>
                                 </div>
                                 <div className="pageinfo">
                                     <p>Seller:</p>
                                     <p1>
-                                        <p1 id="seller-name">n*u*e*v*n*</p1>
+                                        <p1 id="seller-name">****nvana </p1>
                                         <p1 id="seller-rating">(10/10)</p1>
                                     </p1>
                                 </div>
                                 <div className="pageinfo">
                                     <p>Last Bidder: </p>
                                     <p1>
-                                        <p1 id="bidder-name">abcLong</p1>
-                                        <p1 id="bidder-rating">(10/10)</p1>
-                                        <p1><Fragment>&nbsp;</Fragment>at:
+                                        <p1 id="bidder-name">****vtlong </p1>
+                                        <p1 id="bidder-rating">(10/10)        </p1>
+                                        <p1><Fragment>&nbsp;</Fragment>at:<Fragment>&nbsp;</Fragment>
                                                 <t id="timer5">10/1/2022</t>
                                         </p1>
                                     </p1>
@@ -97,7 +93,7 @@ const UserProductDetails = () => {
                                 </div>
                                 <div className="pageinfo">
                                     <p>Description:</p>
-                                    <p1 id="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores culpa dolorem doloremque eligendi expedita hic illo itaque molestias natus odit officiis pariatur quia sunt, tempora, ullam ut voluptas voluptatum.</p1>
+                                    <p1 id="product-desc">{product.description}</p1>
                                 </div>
                             </div>
                         </>
@@ -106,15 +102,25 @@ const UserProductDetails = () => {
                     
                 </div>
             </div>
-            {/* <!------ auctions ------> */}
-
+            </div>
+            
             <div className="small-container">
                 <div className="row">
                     <div className="col-6">
-                        <Link to="/user/bid"className="btn2">Bid Now!</Link>
+                        <Link to=""className="btn2">Bid Now!</Link>
+                        <p1>
+                            <img className="iconimg" src={bidicon}/>
+                            <p1 id="activebidder">203</p1>
+                            <p1>Active bidder</p1>
+                        </p1>
                     </div>
                     <div className="col-6">
-                        <Link to=""className="btn2">Add to watch list</Link>
+                        <a href=""className="btn2">Add to watch list</a>
+                        <p1>
+                            <img className="iconimg" src="images/watching.png"/>
+                            <p1 id="watching">203</p1>
+                            <p1>People Watching</p1>
+                        </p1>
                     </div>
                 </div>
             </div>

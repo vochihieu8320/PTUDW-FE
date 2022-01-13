@@ -7,17 +7,17 @@ import bidicon from "../assets/res/bidicon.png"
 
 
 
-const UserProductCategory = () => {
+const UserSearchProduct = () => {
     const [ProductList, setProductList] = useState([{"product":{}}]);
     const local = localStorage.getItem("currentUser");
     const token = JSON.parse(local)["token"];
-    const [currentPage, setCurrentPage] = useState(0);
+    const [sortBy, setSortBy] = useState("");
     let history = useHistory()
 
     useEffect(() => {
-        const fetchList = async (skip,limit,name) =>{
+        const fetchList = async (skip,limit) =>{
             try {
-                  await axios.get(`https://wnc-be-18.herokuapp.com/products/?skip=${skip}&limit=${limit}`,{
+                  await axios.get(`https://wnc-be-18.herokuapp.com/products/?skip=${skip}&limit=${limit}&name=${localStorage.getItem("current_search_name")}&category=${localStorage.getItem("current_search_name")}&sortBy=${sortBy}`,{
                   headers: {"Authorization" : `Bearer ${token}`}
                 }) 
                   .then(res => {
@@ -37,12 +37,22 @@ const UserProductCategory = () => {
         history.push("/user/products/detail")
     }
 
+    function sortProduct(){
+        window.location.reload()
+    }
+
     return(
         <div>
             <div className="header">
                 <div className="container">
                     <div className="row">
-                        <h2 className="title">All Products</h2>
+                        <h2 className="title">Search Result</h2>
+                        <select value={sortBy} onChange={(e)=>setSortBy(e.target.value)}>
+                            <option selected>Sort By</option> 
+                            <option value={1}>price</option>
+                            <option value={2}>date</option>
+                        </select>
+                        <button type='submit' onClick={()=>sortProduct()} >Sort</button>
                     </div>
                 </div>
             </div>
@@ -79,4 +89,4 @@ const UserProductCategory = () => {
     )
 }
 
-export default UserProductCategory;
+export default UserSearchProduct;

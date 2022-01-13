@@ -4,10 +4,17 @@ import "../assets/css/homepage.css";
 
 const Navbar = () => {
     let history = useHistory()
+    const [current_search_name,setSearchName] = useState('')
+
     function RemoveAccount(){
-        localStorage.removeItem("currentUser")
-        localStorage.removeItem("refreshToken")
+        localStorage.setItem("currentUser",null)
+        localStorage.removeItem("refreshToken",null)
         history.push("/user/login")
+    }
+
+    function setName(value){
+        setSearchName(value)
+        localStorage.setItem("current_search_name",value)
     }
 
     return (
@@ -15,9 +22,9 @@ const Navbar = () => {
             <div className="content">
                 <div className="logo"><Link to="/user"> ForBidDen</Link></div>
                 <div class="box">
-                <input type="checkbox" id="check" />
+                <input type="checkbox" id="check"/>
                     <div class="search-box">
-                        <input id="s-box" type="text" placeholder="Search for a bid"/>
+                        <input value={current_search_name} onChange={(e)=>setName(e.target.value)} id="s-box" type="text" placeholder="Search for a bid"/>
                         <label for="check" class="s-icon">
                             <i class="fas fa-search"></i>
                         </label>

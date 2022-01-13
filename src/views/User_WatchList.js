@@ -48,7 +48,7 @@ const UserWatchList = () => {
         <div className="col-watchbig">
             <div className="row-small">
                 <p1>From:</p1>
-                <p1 id="seller-name">nvanafbd</p1>
+                <p1 id="seller-name">****nvana</p1>
                 <p1 id="seller-rating">(10/10)</p1>
             </div>
             <div className="row-small">
@@ -68,7 +68,7 @@ const UserWatchList = () => {
         <div className="col-watchbig">
             <div className="row-small">
             <p1>Last bid:</p1>
-            <p1 id="bidder-name">nvanafbd</p1>
+            <p1 id="bidder-name">****nvana</p1>
             <p1 id="bidder-price">$1500</p1>
             </div>
             <div className="row-small">
@@ -90,7 +90,7 @@ const UserWatchList = () => {
         <div className="col-watchbig">
             <div className="row-small">
             <p1>From:</p1>
-            <p1 id="seller-name">nvanafbd</p1>
+            <p1 id="seller-name">****nvana</p1>
             <p1 id="seller-rating">(10/10)</p1>
             </div>
             <div className="row-small">
@@ -110,7 +110,7 @@ const UserWatchList = () => {
         <div className="col-watchbig">
             <div className="row-small">
             <p1>Last bid:</p1>
-            <p1 id="bidder-name">nvanafbd</p1>
+            <p1 id="bidder-name">****nvana</p1>
             <p1 id="bidder-price">$1500</p1>
             </div>
             <div className="row-small">
@@ -132,7 +132,7 @@ const UserWatchList = () => {
         <div className="col-watchbig">
             <div className="row-small">
             <p1>From:</p1>
-            <p1 id="seller-name">nvanafbd</p1>
+            <p1 id="seller-name">****nvana</p1>
             <p1 id="seller-rating">(10/10)</p1>
             </div>
             <div className="row-small">
@@ -152,7 +152,7 @@ const UserWatchList = () => {
         <div className="col-watchbig">
             <div className="row-small">
             <p1>Last bid:</p1>
-            <p1 id="bidder-name">nvanafbd</p1>
+            <p1 id="bidder-name">****nvana</p1>
             <p1 id="bidder-price">$1500</p1>
             </div>
             <div className="row-small">

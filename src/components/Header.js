@@ -7,7 +7,15 @@ import menu from "../assets/res/menu.png"
 import img1 from "../assets/res/img1.png"
 
 const Header = () => {
-    
+    let history = useHistory()
+    function CheckUserLogin(){
+        if(localStorage.getItem("currentUser")===null){
+            history.push("/user/prducts")
+        }
+        else{
+            history.push("/user/login")
+        }
+    }
 
     return (
         <div className="header">

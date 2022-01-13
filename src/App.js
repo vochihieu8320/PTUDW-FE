@@ -15,6 +15,7 @@ import UserProductCategory from './views/User_Category';
 import UserProductBid from './views/Bid_Product';
 import UserWatchList from './views/User_WatchList';
 import UpgradeToSeller from './views/Upgrade_to_Seller';
+import UserSearchProduct from './views/Search_Product';
 
 // Chữ cái đầu phải viết hoa mới được
 class App extends React.Component {
@@ -56,6 +57,7 @@ class App extends React.Component {
                 <Route exact path = "/user/products">
                     <Navbar/>
                     <UserProductCategory />
+                    <Footer/>
                 </Route>
                 <Route exact path = "/user/changepwd">
                     <UserChangePwd/>
@@ -73,6 +75,11 @@ class App extends React.Component {
                 <Route exact path = "/user/upgradetoseller">
                     <Navbar/>
                     <UpgradeToSeller />
+                    <Footer/>
+                </Route>
+                <Route exact path = "/user/search">
+                    <Navbar/>
+                    <UserSearchProduct />
                     <Footer/>
                 </Route>
             </Switch>
