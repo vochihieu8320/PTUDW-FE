@@ -22,34 +22,6 @@ const Header = () => {
                         <img src={img1}/>
                     </div>
                 </div>
-
-            <script>
-                {/* const navbar = document.querySelector(".navbar")
-                const menu = document.querySelector(".menu-list");
-                const menuBtn = document.querySelector(".menu-btn");
-                const cancelBtn = document.querySelector(".cancel-btn");
-                const Topbutton = document.getElementById("TopBtn");
-                menuBtn.onclick = ()=>{
-                    menu.classNameList.add("active")
-                    menuBtn.classNameList.add("hide")
-                }
-                cancelBtn.onclick = ()=>{
-                    menu.classNameList.remove("active")
-                    menuBtn.classNameList.remove("hide")
-                }
-                window.onscroll = () => {
-                    this.scrollY > 20 ? navbar.classNameList.add("sticky") : navbar.classNameList.remove("sticky")
-                    this.scrollY > 100 ? Topbutton.style.display = "block" :Topbutton.style.display = "none";
-                }
-                function topFunction() {
-                    window.scrollTo({
-                        top:0,
-                        left:0,
-                        behavior: "smooth"
-                    })
-                    document.body.scrollTop = 0;
-                } */}
-            </script>
         </div>
     </div>
     );

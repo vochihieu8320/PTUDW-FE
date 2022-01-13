@@ -12,33 +12,29 @@ import moneybag from "../assets/res/moneybag.png"
 import bidicon from "../assets/res/bidicon.png"
 
 const Homepage = () => {
-    
 
-    function Countdown (downtime,id) {
-        var countDownDate = new Date(downtime).getTime();
-        var x = setInterval(()=> {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById(id).innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    }
+    // function Countdown (downtime,id) {
+    //     var countDownDate = new Date(downtime).getTime();
+    //     var x = setInterval(()=> {
+    //         var now = new Date().getTime();
+    //         var distance = countDownDate - now;
+    //         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    //         document.getElementById("timer").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+    //         if (distance < 0) {
+    //             clearInterval(x);
+    //             document.getElementById(id).innerHTML = "EXPIRED";
+    //         }
+    //     }, 1000);
+    // }
 
     return(
         <div>
-            {/* <button onClick={topFunction()} id="TopBtn" title="Go to top">
+            <button  id="TopBtn" title="Go to top">
                 <i className="material-icons">arrow_upward</i>
-            </button> */}
-            <script>
-                {/* {Arrow_Upward()} */}
-            </script>
+            </button> 
 
             {/* <!------ featured catergories ------> */}
             <div className="catergories">
@@ -86,6 +82,7 @@ const Homepage = () => {
                             </div>
                         </div>
                         <t id="timer1">  </t>
+                        
                     </div>
                     <div className="col-4">
                         <img src={triumph2} alt=""/>
@@ -154,7 +151,7 @@ const Homepage = () => {
                 </div>
             </div>
 
-            {/* <!------ offer ------> */}
+            {/* <!------ offer ------>
             {/* <div className="offer">
                 <div className="small-container">
                     <div className="row">

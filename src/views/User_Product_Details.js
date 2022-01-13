@@ -28,13 +28,7 @@ const UserProductDetails = () => {
         fetchProduct();
     }, [])
 
-    {Array(Product).map(product=>{
-        imgArr = product.imgArr
-    })}
-
-    img1 = JSON.stringify(imgArr)
-    console.log(typeof(img1))
-
+    
     return(
         <div>
             <div className="container">
@@ -44,23 +38,23 @@ const UserProductDetails = () => {
                         <>
                             <div className="col-product">
                             <img src={product.img} width="100%" id="product-img"/>
-                                {/* {Array(imgArr).map(img=>{
-                                    return(
-                                        <>
-                                            <div className="small-img-row">
-                                                <div className="small-img-col">
-                                                    <img src={product.img} width="100%" className="small-img"/>
-                                                </div>
-                                                <div className="small-img-col">
-                                                    <img src={img.img1} width="100%" className="small-img"/>
-                                                </div>
-                                                <div className="small-img-col">
-                                                    <img src={img.img2} width="100%" className="small-img"/>
-                                                </div>
+                            {Array(imgArr).map(img=>{
+                                return(
+                                    <>
+                                        <div className="small-img-row">
+                                            <div className="small-img-col">
+                                                <img src={product.img} width="100%" className="small-img"/>
                                             </div>
-                                        </>
-                                    )
-                                })} */}
+                                            <div className="small-img-col">
+                                                <img src={img.img1} width="100%" className="small-img"/>
+                                            </div>
+                                            <div className="small-img-col">
+                                                <img src={img.img2} width="100%" className="small-img"/>
+                                            </div>
+                                        </div>
+                                    </>
+                                )
+                            })}
                             </div>
                             <div className="col-5">
                                 <div className="pageinfo">
@@ -81,7 +75,7 @@ const UserProductDetails = () => {
                                 <div className="pageinfo">
                                     <p>Seller:</p>
                                     <p1>
-                                        <p1 id="seller-name">nvanafbd</p1>
+                                        <p1 id="seller-name">n*u*e*v*n*</p1>
                                         <p1 id="seller-rating">(10/10)</p1>
                                     </p1>
                                 </div>
@@ -117,7 +111,7 @@ const UserProductDetails = () => {
             <div className="small-container">
                 <div className="row">
                     <div className="col-6">
-                        <Link to=""className="btn2">Bid Now!</Link>
+                        <Link to="/user/bid"className="btn2">Bid Now!</Link>
                     </div>
                     <div className="col-6">
                         <Link to=""className="btn2">Add to watch list</Link>
