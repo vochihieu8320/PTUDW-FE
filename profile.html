@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-avatar">
                 <img src="images/user-1.png">
-                <a href=""class="btn2">Change your avatar</a>
+                <button id="change-avatar" class="edit">Change your avatar</button>
             </div>
             <div class="col-5">
                 <div class="pageinfo">
@@ -120,7 +120,10 @@
                 </div>
                 <div class="pageinfo">
                     <p>Role:</p>
-                    <p1 id="user-role">Bidder</p1>
+                    <p1>
+                        <p1 id="user-role">Bidder</p1>
+                        <button id="upgrade-seller" class="edit">Upgrade to seller</button>
+                    </p1>
                 </div>
                 <div class="pageinfo">
                     <p>Phone number:</p>
@@ -156,7 +159,6 @@
                 </div>
                 <div class="pageinfo">
                     <a href=""class="btn2 profile">Save information</a>
-                    <a href=""class="btn2 profile">Upgrade to seller</a>
                 </div>
             </div>
         </div>
@@ -176,10 +178,11 @@
         </div>
     </div>
 </div>
-    <!------ my auctions ------>
+    <!------ seller ended auction ------>
 
-<div class="small-container">
+<div id="seller-feedback" class="small-container">
 
+    <h2 class="title" >Feedback</h2>
     <div class="row-watch">
         <img class="img-watchlist" src="images/Honda/X-ADV_1.jpg">
         <div class="col-bidsmall">
@@ -192,7 +195,7 @@
                 </div>
             </div>
             <div class="row-small">
-                <p1>From:</p1>
+                <p1>User won:</p1>
                 <p1 id="seller-name">nvanafbd</p1>
                 <p1 id="seller-rating">(10/10)</p1>
             </div>
